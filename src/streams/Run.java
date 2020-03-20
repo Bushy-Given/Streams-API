@@ -18,6 +18,6 @@ public class Run {
             long count = word.chars().filter(c -> c == e).count();
             hashMap.put((char)e, count);
         });
-        System.out.println(hashMap);
+        hashMap.forEach((k,v) -> System.out.print(v+""+ (char)k ));
     }
 }
