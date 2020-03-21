@@ -2,6 +2,7 @@ package streams;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.IntPredicate;
 
 /**
  * Created by Bushy-Netshidaulu
@@ -12,12 +13,12 @@ public class Run {
     public static void main(String[] args) {
 
         //print the number of times each character apear on a string
-        String word = "bussshyy";
-        Map<Character,Long>  hashMap = new HashMap<>();
-        word.chars().forEach(e -> {
-            long count = word.chars().filter(c -> c == e).count();
-            hashMap.put((char)e, count);
+        String str = "bussshyy";
+        Map<Character,Long>  map = new HashMap<>();
+        str.chars().forEach(c1 -> {
+                IntPredicate p = c2 -> c2 == c1;
+                map.put((char) c1, str.chars().filter(p).count());
         });
-        hashMap.forEach((k,v) -> System.out.print(v+""+ (char)k ));
+        map.forEach((k,v) -> System.out.print(v + "" + k ));
     }
 }
