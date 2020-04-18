@@ -38,7 +38,7 @@ public class _Maps {
         String product;
         if (false) {
             //pausing
-            product = unPaused.stream().collect(Collectors.joining(PAUSED.concat(","))).concat(PAUSED);
+            product = unPaused.stream().collect(Collectors.joining(PAUSED.concat(","),"",PAUSED));
         }
         else {
             //unpausung
